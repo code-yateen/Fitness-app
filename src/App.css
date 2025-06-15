@@ -1,0 +1,142 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Main container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #111827, #4c1d95, #1e40af);
+}
+
+/* Content container */
+.content-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 6rem;
+}
+
+/* Hero section */
+.hero-container {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-title-block {
+  display: block;
+}
+
+.hero-title-gradient {
+  display: block;
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: rgb(209, 213, 219);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .hero-description {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+.button-container {
+  margin-top: 2.5rem;
+}
+
+.primary-button {
+  padding: 0.75rem 2rem;
+  margin: 0 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #0ea5e9, #3b82f6);
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.primary-button:hover {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  padding: 0.75rem 2rem;
+  margin: 0 0.5rem;
+  margin-top: 0.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+  .secondary-button {
+    margin-top: 0;
+  }
+}
+
+/* Custom Glass Effect Classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transform: translateY(-5px);
+}
