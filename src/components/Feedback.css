@@ -1,6 +1,6 @@
 /* Feedback Section Styles */
 .feedback-section {
-  padding: 6rem 1.5rem;
+  padding: 6rem 2rem;
   background: linear-gradient(to bottom, rgba(30, 64, 175, 0.05), rgba(76, 29, 149, 0.1));
   min-height: 100vh;
 }
@@ -35,12 +35,17 @@
 .feedback-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .feedback-content {
     grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+  }
+  
+  .feedback-section {
+    padding: 6rem 2.5rem;
   }
 }
 
@@ -57,7 +62,7 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
+  padding: 1.8rem;
   transition: all 0.3s ease;
 }
 
@@ -104,7 +109,7 @@
   -webkit-backdrop-filter: blur(12px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
@@ -119,27 +124,29 @@
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   font-weight: 500;
+  padding-left: 0.5rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
   color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -152,7 +159,9 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
+  padding-right: 0.5rem;
+  opacity: 1;
 }
 
 /* Rating Stars */
@@ -196,7 +205,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -303,7 +312,7 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
+  padding: 1.8rem;
   transition: all 0.3s ease;
 }
 

@@ -120,13 +120,9 @@
 
 /* Login/Signup buttons */
 .buttons-container {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .buttons-container {
-    display: block;
-  }
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .login-signup-button {
@@ -165,6 +161,144 @@
   position: relative;
   z-index: 10;
   font-weight: 600;
+}
+
+.login-button, .signup-button {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.signup-button {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.signup-button:hover {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* User profile and authentication styles */
+.user-profile-menu {
+  position: relative;
+}
+
+.user-profile-button {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.35rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-profile-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.user-name {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.user-menu-arrow {
+  width: 1rem;
+  height: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.user-menu-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 220px;
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.dropdown-item svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dropdown-item.logout {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 0.5rem;
+  color: #f87171;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dropdown-item.logout svg {
+  color: #f87171;
+}
+
+.dropdown-item.logout:hover {
+  background: rgba(248, 113, 113, 0.1);
 }
 
 /* Mobile menu button */
@@ -252,6 +386,66 @@
   margin-top: 0.5rem;
   display: block;
   cursor: pointer;
+}
+
+.mobile-login-button,
+.mobile-signup-button,
+.mobile-logout-button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-login-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-signup-button {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.mobile-logout-button {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+}
+
+.mobile-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  margin-right: 1rem;
+}
+
+.mobile-user-info span {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* Animations */
