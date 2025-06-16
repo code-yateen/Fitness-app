@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -8,8 +8,9 @@ import Workouts from './components/Workouts'
 import Plans from './components/Plans'
 import Trainers from './components/Trainers'
 import Auth from './components/Auth'
-import ProtectedRoute from './components/ProtectedRoute'
+import Profile from './components/Profile'
 import './components/PageStyles.css'
+import RequireAuth from './components/RequireAuth'
 
 // Layout component that always renders the Navbar
 const Layout = ({ isLoggedIn, setIsLoggedIn, children }) => {
@@ -18,6 +19,7 @@ const Layout = ({ isLoggedIn, setIsLoggedIn, children }) => {
       {/* Always show navbar on all pages */}
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div className="content-container">
+        {/* Removed footer from all pages */}
         {children}
       </div>
     </div>
@@ -53,19 +55,17 @@ function App() {
     <Router>
       <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Protected route for My Workouts - users must be logged in */}
-          <Route path="/workouts" element={
-            <ProtectedRoute>
-              <Workouts />
-            </ProtectedRoute>
-          } />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="/trainers" element={<Trainers />} />
-          <Route path="/feedback" element={<Feedback />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/signup" element={<Auth />} />
-          <Route path="*" element={<Home />} />
+          {/* Protected routes */}
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/workouts" element={<RequireAuth><Workouts /></RequireAuth>} />
+          <Route path="/plans" element={<RequireAuth><Plans /></RequireAuth>} />
+          <Route path="/trainers" element={<RequireAuth><Trainers /></RequireAuth>} />
+          <Route path="/feedback" element={<RequireAuth><Feedback /></RequireAuth>} />
+          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
+          {/* Catch-all */}
+          <Route path="*" element={<RequireAuth><Home /></RequireAuth>} />
         </Routes>
       </Layout>
     </Router>

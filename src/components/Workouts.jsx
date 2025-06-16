@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useUser } from '@clerk/clerk-react';
 import './Workouts.css';
 
 const Workouts = () => {
+  const { user } = useUser();
   // States for user profile
   const [profileStep, setProfileStep] = useState(1);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,6 +30,19 @@ const Workouts = () => {
       setTimeout(() => setHighlightLifestyle(false), 3000);
     }
   }, [profileStep]);
+
+  // If Clerk user is logged in, use their info for the profile
+  useEffect(() => {
+    if (user) {
+      setIsLoggedIn(true);
+      setProfile((prev) => ({
+        ...prev,
+        name: user.fullName || user.username || '',
+        email: user.primaryEmailAddress?.emailAddress || '',
+        // Optionally, set other fields if you store them in Clerk's public metadata
+      }));
+    }
+  }, [user]);
 
   // Handler for profile inputs
   const handleProfileChange = (e) => {
@@ -548,6 +563,13 @@ const Workouts = () => {
             </motion.form>
           </div>
         ) : (
+          <div className="profile-summary">
+            <h2>Welcome, {profile.name || 'User'}!</h2>
+            <p>Your personalized workout and diet plan is ready below.</p>
+          </div>
+        )}
+        
+        {isLoggedIn && (
           <div className="plans-container">
             <div className="user-profile-summary">
               <div className="profile-avatar">
