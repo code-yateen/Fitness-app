@@ -573,7 +573,11 @@ const Workouts = () => {
           <div className="plans-container">
             <div className="user-profile-summary">
               <div className="profile-avatar">
-                {profile.name.charAt(0).toUpperCase()}
+                {user && user.imageUrl ? (
+                  <img src={user.imageUrl} alt="Profile" style={{ width: 56, height: 56, borderRadius: '50%', objectFit: 'cover', border: '2px solid #a855f7' }} />
+                ) : (
+                  profile.name.charAt(0).toUpperCase()
+                )}
               </div>
               <div className="profile-details">
                 <h3>{profile.name}</h3>
