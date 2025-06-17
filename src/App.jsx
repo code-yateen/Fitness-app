@@ -55,7 +55,7 @@ function App() {
     <Router>
       <Layout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
         <Routes>
-          <Route path="/login" element={<Auth />} />
+          <Route path="/signin" element={<Auth />} />
           <Route path="/signup" element={<Auth />} />
           {/* Protected routes */}
           <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
