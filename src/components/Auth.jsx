@@ -7,7 +7,7 @@ const Auth = () => {
   const navigate = useNavigate();
   const location = useLocation();
     // State to toggle between login and signup forms
-  const [isLogin, setIsLogin] = useState(location.pathname === '/login');
+  const [isLogin, setIsLogin] = useState(location.pathname === '/signin');
   
   // Get redirect URL from query params (if it exists)
   const [redirectPath, setRedirectPath] = useState('/');
