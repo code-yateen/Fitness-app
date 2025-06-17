@@ -416,7 +416,7 @@ const Auth = () => {
               {isLogin ? (
                 <p>Don't have an account? <button type="button" onClick={toggleForm}>Sign up</button></p>
               ) : (
-                <p>Already have an account? <button type="button" onClick={toggleForm}>Log in</button></p>
+                <p>Already have an account? <button type="button" onClick={toggleForm}>Sign in</button></p>
               )}
             </div>
           </motion.div>
