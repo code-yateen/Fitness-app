@@ -58,7 +58,7 @@ function App() {
           <Route path="/login" element={<Auth />} />
           <Route path="/signup" element={<Auth />} />
           {/* Protected routes */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
           <Route path="/workouts" element={<RequireAuth><Workouts /></RequireAuth>} />
           <Route path="/plans" element={<RequireAuth><Plans /></RequireAuth>} />
           <Route path="/trainers" element={<RequireAuth><Trainers /></RequireAuth>} />
