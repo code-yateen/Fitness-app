@@ -15,7 +15,7 @@ const Auth = () => {
   
   useEffect(() => {
     // Update isLogin state when route changes
-    setIsLogin(location.pathname === '/login');
+    setIsLogin(location.pathname === '/signin');
     
     // Parse the URL search parameters to get the redirect path
     const searchParams = new URLSearchParams(location.search);
